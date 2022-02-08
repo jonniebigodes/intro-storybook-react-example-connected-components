@@ -141,6 +141,7 @@ exports[`Storyshots TaskList Default 1`] = `
 >
   <div
     className="list-items"
+    data-testid="success"
   >
     <div
       className="list-item TASK_INBOX"
@@ -601,6 +602,7 @@ exports[`Storyshots TaskList With Pinned Tasks 1`] = `
 >
   <div
     className="list-items"
+    data-testid="success"
   >
     <div
       className="list-item TASK_PINNED"
