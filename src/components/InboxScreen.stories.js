@@ -2,6 +2,8 @@ import React from "react";
 
 import InboxScreen from "./InboxScreen";
 import store from "../lib/store";
+
+import { MockedState } from "./TaskList.stories";
 import { rest } from "msw";
 import {
   fireEvent,
@@ -27,31 +29,7 @@ Default.parameters = {
       rest.get(
         "https://jsonplaceholder.typicode.com/todos?userId=1",
         (req, res, ctx) => {
-          return res(
-            ctx.json([
-              {
-                id: 1,
-                title: "Task 1",
-                completed: false,
-              },
-              {
-                id: 2,
-                title: "Task 2",
-                completed: false,
-              },
-              {
-                id: 3,
-                title: "Task 3",
-                completed: false,
-              },
-              {
-                id: 4,
-                userID: 2,
-                title: "Task 4",
-                completed: false,
-              },
-            ])
-          );
+          return res(ctx.json(MockedState.tasks));
         }
       ),
     ],
